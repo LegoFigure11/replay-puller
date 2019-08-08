@@ -1,0 +1,17 @@
+{
+  "name": "replaypuller",
+  "version": "1.0.0",
+  "description": "Puller for BSPL Replays",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc app.ts && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LegoFigure11",
+  "license": "ISC",
+  "dependencies": {
+    "@types/request": "^2.48.2",
+    "request": "^2.88.0",
+    "system-sleep": "^1.3.6"
+  }
+}
