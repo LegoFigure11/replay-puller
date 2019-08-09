@@ -22,7 +22,7 @@ request(url, function(error: any, response: { statusCode: any; }, body: any) {
     let match = urlRegex.exec(k);
     if (match != undefined) {
       parsedReplayURLs.push(match[0]);
-      replayLogs.push(`${match[0]}.log`);
+      replayLogs.push(`${(match[0].includes("https") ? match[0] : "https" + match[0].substr(4, match[0].length))}.log`);
     }
   }
   replayLogs.sort();
@@ -93,6 +93,6 @@ function getPlayers(n: string) {
 function write(value) {
   fs.appendFile(`${url.substr(url.indexOf("/threads/") + 9, url.length).replace("/", "")}_replays.txt`, value, function(err) {
     if (err) throw err;
-    console.log('Saved!\n------------------------------------\n');
+    console.log('\nSaved!\n------------------------------------\n');
   });
 }
